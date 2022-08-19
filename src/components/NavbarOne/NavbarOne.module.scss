@@ -1,54 +1,108 @@
-.container {
-  margin-top: 100px;
-  width: 400px;
-  height: 70px;
-  background: #222327;
+@mixin indicatorPosition($number) {
+  &:nth-child(#{$number}).active ~ .navbar__indicator {
+    transform: translateX(70px * ($number - 1));
+  }
+}
+
+.background {
+  width: 600px;
+  height: 200px;
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  .navbar {
-    &__wrapper {
-      width: 350px;
-      display: flex;
-      padding: 0;
-    }
-    &__item {
-      width: 70px;
-      height: 70px;
-      list-style: none;
-      &-wrapper {
+  background-color: #222327;
+  .container {
+    width: 400px;
+    height: 70px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    .navbar {
+      &__wrapper {
         position: relative;
-        text-decoration: none;
-        background: #bfa;
+        width: 350px;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        font-weight: 500;
+        padding: 0;
       }
-      &:hover {
-        .navbar__item-icon {
-          transform: translateY(-35px);
+      &__item {
+        width: 70px;
+        height: 70px;
+        list-style: none;
+        &-wrapper {
+          position: relative;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          font-weight: 500;
         }
-        .navbar__item-text{
-          opacity: 1;
-          transform: translateY(10px);
+        &.active {
+          .navbar__item-icon {
+            transform: translateY(-35px);
+          }
+          .navbar__item-text {
+            opacity: 1;
+            transform: translateY(10px);
+          }
+        }
+        @include indicatorPosition(1);
+        @include indicatorPosition(2);
+        @include indicatorPosition(3);
+        @include indicatorPosition(4);
+        @include indicatorPosition(5);
+        &-icon {
+          z-index: 1;
+          line-height: 75px;
+          font-size: 1.5em;
+          transition: 0.5s;
+        }
+        &-text {
+          position: absolute;
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 0.75em;
+          letter-spacing: 0.05em;
+          transition: 0.5s;
+          opacity: 0;
+          transform: translateY(20px);
         }
       }
-      &-icon {
-        line-height: 75px;
-        font-size: 1.5em;
-        transition: 0.5s;
-      }
-      &-text{
+      &__indicator {
+        box-sizing: border-box;
         position: absolute;
-        font-weight: 400;
-        font-size: 0.75em;
-        letter-spacing: 0.05em;
+        top: -50%;
+        width: 70px;
+        height: 70px;
+        background: #29fd53;
+        border-radius: 50%;
+        border: 6px solid #222327;
         transition: 0.5s;
-        opacity: 0;
-        transform: translateY(20px);
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: -22px;
+          width: 20px;
+          height: 20px;
+          background: transparent;
+          border-top-right-radius: 20px;
+          box-shadow: 0 -10px 0 0 #222327;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: -22px;
+          width: 20px;
+          height: 20px;
+          background: transparent;
+          border-top-left-radius: 20px;
+          box-shadow: 0 -10px 0 0 #222327;
+        }
       }
     }
   }
