@@ -1,0 +1,114 @@
+@import "../../global.scss";
+
+@mixin indicatorPosition($number) {
+  &:nth-child(#{$number}).active ~ .indicator {
+    transform: rotate(360deg / 5 * ($number - 3));
+  }
+}
+
+.background {
+  @include background;
+  background: #222237;
+  .container {
+    @include flexCenter;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0;
+    padding: 0;
+    .circleBg {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #fff;
+      border: 0px solid #fff;
+      transition: 0.5s;
+    }
+    .toggle {
+      @include flexCenter;
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #fff;
+      color: #222237;
+      font-size: 3em;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    .link {
+      position: absolute;
+      left: 40px;
+      list-style: none;
+      transform: rotate(calc(360deg / 5 * var(--i)));
+      transform-origin: 110px;
+      z-index: 10;
+      transition: 0.5s;
+      &.active {
+        transform: rotate(calc(360deg / 5 * var(--i))) translateX(-25px);
+      }
+      @include indicatorPosition(3);
+      @include indicatorPosition(4);
+      @include indicatorPosition(5);
+      @include indicatorPosition(6);
+      @include indicatorPosition(7);
+      a {
+        @include flexCenter;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        font-size: 1.75em;
+        color: #222237;
+        transform: translateX(35px) rotate(calc(360deg / -5 * var(--i)));
+        visibility: hidden;
+        opacity: 0;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+    }
+    .indicator {
+      @include flexCenter;
+      position: absolute;
+      left: 0;
+      width: 50%;
+      transform-origin: right;
+      transition: 0.5s;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50px;
+        width: 60px;
+        height: 60px;
+        background: #222237;
+        box-shadow: 0 0 0 6px #29fd53;
+        border-radius: 50%;
+        transition: 0.5s;
+        opacity: 0;
+      }
+    }
+    &.active {
+      & .circleBg {
+        border: 70px solid #fff;
+      }
+      & .toggle {
+        transform: rotate(315deg);
+        background: #222237;
+        color: #fff;
+      }
+      & .link {
+        a {
+          visibility: visible;
+          opacity: 1;
+          transform: translateX(0) rotate(calc(360deg / -5 * var(--i)));
+        }
+      }
+      & .indicator::before {
+        opacity: 1;
+        left: 15px;
+        background: #29fd53;
+        box-shadow: 0 0 0 6px #222237;
+      }
+    }
+  }
+}

@@ -6,3 +6,9 @@
   align-items: center;
   border-radius: 20px;
 }
+
+@mixin flexCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

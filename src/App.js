@@ -5,6 +5,7 @@ import { navbarLinks } from "./navbarInfo";
 import NavbarOne from "./components/NavbarOne/NavbarOne";
 import NavbarTwo from "./components/NavbarTwo/NavbarTwo";
 import NavbarThree from "./components/NavbarThree/NavbarThree";
+import NavbarFour from "./components/NavbarFour/NavbarFour";
 
 const Container = styled.div`
   display: flex;
@@ -20,6 +21,7 @@ const App = () => {
       <NavbarOne navbarLinks={navbarLinks} />
       <NavbarTwo navbarLinks={navbarLinks} />
       <NavbarThree navbarLinks={navbarLinks} />
+      <NavbarFour navbarLinks={navbarLinks} />
     </Container>
   );
 };
