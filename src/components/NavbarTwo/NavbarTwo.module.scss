@@ -1,5 +1,7 @@
+@import "../../global.scss";
+
 .background {
-  padding: 30px;
+  @include background;
   background: linear-gradient(45deg, #8460ed, #ff1252);
   .container {
     position: relative;

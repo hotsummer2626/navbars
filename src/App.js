@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import "./global.scss";
 import { navbarLinks } from "./navbarInfo";
 import NavbarOne from "./components/NavbarOne/NavbarOne";
 import NavbarTwo from "./components/NavbarTwo/NavbarTwo";
+import NavbarThree from "./components/NavbarThree/NavbarThree";
 
 const Container = styled.div`
   display: flex;
@@ -17,6 +19,7 @@ const App = () => {
     <Container>
       <NavbarOne navbarLinks={navbarLinks} />
       <NavbarTwo navbarLinks={navbarLinks} />
+      <NavbarThree navbarLinks={navbarLinks} />
     </Container>
   );
 };

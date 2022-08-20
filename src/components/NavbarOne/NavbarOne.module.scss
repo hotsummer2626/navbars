@@ -1,3 +1,4 @@
+@import "../../global.scss";
 @mixin indicatorPosition($number) {
   &:nth-child(#{$number}).active ~ .navbar__indicator {
     transform: translateX(70px * ($number - 1));
@@ -5,12 +6,7 @@
 }
 
 .background {
-  width: 600px;
-  height: 200px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include background;
   background-color: #222327;
   .container {
     width: 400px;

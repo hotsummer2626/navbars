@@ -1,0 +1,73 @@
+@import "../../global.scss";
+
+.background {
+  @include background;
+  background: #e91e63;
+  .container {
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    .wrapper {
+      display: flex;
+      padding: 10px 0;
+      .link {
+        padding: 0 30px;
+        list-style: none;
+        text-align: center;
+        cursor: pointer;
+        border-right: 1px solid rgb(216, 216, 216);
+        &:last-child {
+          border-right: none;
+        }
+        &:hover {
+          .icon-hidden {
+            transform: translateY(-25px);
+          }
+          .text-hidden {
+            transform: translateY(0);
+          }
+        }
+        a {
+          text-decoration: none;
+          text-transform: uppercase;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .icon,
+          .text {
+            overflow: hidden;
+            &-hidden {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              transition: 0.3s;
+            }
+          }
+          .icon {
+            height: 25px;
+            &-item {
+              height: 25px;
+              &:nth-child(2) {
+                color: #e91e63;
+              }
+            }
+          }
+          .text {
+            font-size: 10px;
+            height: 15px;
+            &-hidden {
+              transform: translateY(-15px);
+            }
+            &-item {
+              line-height: 15px;
+              &:nth-child(1) {
+                color: #e91e63;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

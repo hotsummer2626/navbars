@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import styles from "./NavbarOne.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const NavbarOne = ({navbarLinks}) => {
-  const [activeLink, setActiveLink] = useState(navbarLinks[0].text);
+const NavbarOne = ({ navbarLinks }) => {
+  const [activeLink, setActiveLink] = useState(navbarLinks[0].name);
   return (
     <div className={styles.background}>
       <div className={styles.container}>
@@ -11,15 +11,15 @@ const NavbarOne = ({navbarLinks}) => {
           {navbarLinks.map((link) => (
             <li
               className={`${styles["navbar__item"]} ${
-                activeLink === link.text ? styles.active : ""
+                activeLink === link.name ? styles.active : ""
               }`}
-              onClick={() => setActiveLink(link.text)}
+              onClick={() => setActiveLink(link.name)}
             >
               <a href="#" className={styles["navbar__item-wrapper"]}>
                 <span className={styles["navbar__item-icon"]}>
                   <FontAwesomeIcon icon={link.icon} />
                 </span>
-                <span className={styles["navbar__item-text"]}>{link.text}</span>
+                <span className={styles["navbar__item-text"]}>{link.name}</span>
               </a>
             </li>
           ))}

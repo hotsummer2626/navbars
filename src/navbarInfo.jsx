@@ -7,12 +7,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export const navbarLinks = [
-  { text: "home", icon: faHouse },
-  { text: "profile", icon: faUser },
+  { name: "home", icon: faHouse },
+  { name: "profile", icon: faUser },
   {
-    text: "message",
+    name: "message",
     icon: faMessage,
   },
-  { text: "photos", icon: faCamera },
-  { text: "settings", icon: faGear },
+  { name: "photos", icon: faCamera },
+  { name: "settings", icon: faGear },
 ];
