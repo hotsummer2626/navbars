@@ -37,9 +37,7 @@
           .text {
             overflow: hidden;
             &-hidden {
-              display: flex;
-              justify-content: center;
-              align-items: center;
+              @include flexCenter;
               flex-direction: column;
               transition: 0.3s;
             }

@@ -4,21 +4,17 @@
   @include background;
   background: linear-gradient(45deg, #8460ed, #ff1252);
   .container {
+    @include flexCenter;
     position: relative;
     width: 200px;
     height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 0;
     .toggle {
+      @include flexCenter;
       position: absolute;
       width: 60px;
       height: 60px;
       background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       z-index: 1;
       border-radius: 50%;
       cursor: pointer;
@@ -41,9 +37,7 @@
       transition-delay: calc(0.1s * var(--i));
       transform: rotate(0deg) translateX(80px);
       a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter;
         width: 40px;
         height: 40px;
         border-radius: 50%;

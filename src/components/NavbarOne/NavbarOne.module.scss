@@ -9,12 +9,10 @@
   @include background;
   background-color: #222327;
   .container {
+    @include flexCenter;
     width: 400px;
     height: 70px;
     background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 10px;
     .navbar {
       &__wrapper {
@@ -28,11 +26,9 @@
         height: 70px;
         list-style: none;
         &-wrapper {
+          @include flexCenter;
           position: relative;
           text-decoration: none;
-          display: flex;
-          justify-content: center;
-          align-items: center;
           flex-direction: column;
           font-weight: 500;
         }
