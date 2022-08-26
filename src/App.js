@@ -19,10 +19,10 @@ const Container = styled.div`
 const App = () => {
   return (
     <Container>
-      {/* <NavbarOne navbarLinks={navbarLinks} />
+      <NavbarOne navbarLinks={navbarLinks} />
       <NavbarTwo navbarLinks={navbarLinks} />
       <NavbarThree navbarLinks={navbarLinks} />
-      <NavbarFour navbarLinks={navbarLinks} /> */}
+      <NavbarFour navbarLinks={navbarLinks} />
       <NavbarFive navbarLinks={navbarLinks} />
     </Container>
   );

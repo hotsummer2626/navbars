@@ -17,8 +17,6 @@
       @include flexCenter;
       justify-content: space-around;
       width: 100%;
-      height: 100%;
-      margin: 0;
       padding: 0;
       .item {
         position: relative;
@@ -26,15 +24,15 @@
         a {
           @include flexCenter;
           position: relative;
-          width: 80px;
           text-decoration: none;
+          cursor: pointer;
           .icon-wrapper {
             @include flexCenter;
             position: absolute;
             font-size: 25px;
+            color: #fff;
             width: 80px;
             height: 80px;
-            color: #fff;
             transform: translateY(0);
             transition: 0.5s;
             .icon {

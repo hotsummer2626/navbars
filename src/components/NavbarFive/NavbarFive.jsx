@@ -16,7 +16,7 @@ const NavbarFive = ({ navbarLinks }) => {
               }`}
               onClick={() => setActiveLink(link.name)}
             >
-              <a href="#">
+              <a>
                 <div className={styles["icon-wrapper"]}>
                   <FontAwesomeIcon className={styles.icon} icon={link.icon} />
                 </div>
